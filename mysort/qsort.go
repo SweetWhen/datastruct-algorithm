@@ -2,6 +2,8 @@ package main
 
 import (
 	"fmt"	
+	"math/rand"
+	"time"
 )
 
 const (
@@ -9,12 +11,26 @@ const (
 )
 
 func main() {
-	a := []int{3,43, 58, 22, 46, 99, 1,1,0, 43, 44, 56,33, 44,77,88,21,43,65,
-		76,87,98,36,37,22,0 }	
-
-	PrintArray(a, "Before sort..")
+	//generate a private rand
+	r := rand.New(rand.NewSource(9))
+	//set seed
+	r.Seed(time.Now().UnixNano())
+	
+	//use r.Perm generate 0~n number
+	a := r.Perm(100)
+	//use timestamp to statistics a process time-consuming incorrect maybe..
+	start := time.Now()
 	MyQsort(a, 0, len(a)-1)
-	PrintArray(a, "After sort..")
+	fmt.Printf("Use %v \n", time.Since(start).String())
+
+	var b = make([]int, 100)
+	for  i := 0; i < len(b); i++ {
+		b[i] = r.Int()
+	}
+	begin := time.Now()
+	MyQsort(b, 0, len(b)-1)
+	fmt.Printf("Use %v \n", time.Since(begin).String())
+
 }
 
 func MyQsort(a []int, start, end int) {
