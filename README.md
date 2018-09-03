@@ -26,5 +26,6 @@ when numbers is 1000000 (slice b), consume 1.78s:
  ok  	_/home/agan/data-struct/struct-algorit/mysort	3.171s
 
 
+We will try Benchmark test when we encounter a suitable example..
 
 

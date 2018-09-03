@@ -15,7 +15,7 @@ func init() {
 	fmt.Println("init func print...")
 	r.Seed(time.Now().UnixNano())
 	a = r.Perm(100000)
-	b = r.Perm(10000000)
+	b = r.Perm(1000000)
 }
 
 func TestQsortFunction(t *testing.T) {
@@ -31,11 +31,13 @@ func TestQsortFunction(t *testing.T) {
 func TestQsortPerfomance1(t *testing.T) {
 	t.Logf("0~100000 numbers qsor..\n")
 	MyQsort(a, 0, len(a)-1)
+	fmt.Println(a)
 }
 
 func TestQsortPerfomance2(t *testing.T) {
 	t.Logf("0~1000000 numbers qsor..\n")
 	MyQsort(b, 0, len(b)-1)
+	fmt.Println(b)
 }
 
 func sliceEqua(dst, src []int) bool {
