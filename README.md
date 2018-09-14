@@ -1,31 +1,53 @@
-data struct and algorithm in golang
 
-test-qsort branch use testing to test our MyQsort function
-TestQsortFunction -> test is our function work fine:
-  root@ubuntu01:mysort# go test
-  init func print...
-  sort result: [1 2 3 5 6 10 12 24 32 33 55 60 78]
-  PASS
-  ok  	_/home/agan/data-struct/struct-algorit/mysort	3.585s
+an avl tree api:
+** an avl tree api:
+//==>> operator tree api:
+//insert an x to AvlTree, invoker format: t = tree.Insert(t, x)
+func Insert(tree *AvlNode, x ElementType) *AvlNode 
+//del an x in AvlTree, invoker format: t = tree.Delete(t, x)
+func Delete(tree *AvlNode, x ElementType) *AvlNode 	
+//make a tree to be empty
+func MakeEmpty( tree *AvlNode) *AvlNode 
+
+//==>> print tree api:
+//draw a tree
+func DrawTree1(tree *AvlNode) 
+//leve print a tree
+func LevePrintTree(tree *AvlNode) 
+//middle print a tree
+func MidPrintTree(tree *AvlNode) 
+//prev print a tree
+func PrevPrintTree(tree *AvlNode) {
+//return the height of the node
+func (node *AvlNode) NodeHeight() int 
+
+//==>> find   node  api:
+//find Element x position in the avl tree
+func (tree *AvlNode) Find(x ElementType) *AvlNode
+//find min elem in the tree
+func (tree *AvlNode) FinMin() *AvlNode 
+//find max elem in the tree
+func (tree *AvlNode) FinMax() *AvlNode 
 
 
-generator rand number slice a and b in init func, both a and has diff number
-then use TestQsortPerfomance1 and TestQsortPerfomance2 test our func
-We can see that when numbers is 100000 (slice a), consume 0.02s
-when numbers is 1000000 (slice b), consume 1.78s:
+root@ubuntu01:tree# go test
+create a slice: [19 13 0 9 4 29 3 14 21 23 1 12 2 11 24 26 28 20 7 17 25 15 18 6 16 5 8 27 10 22]
+tree created
+midl read:
+ 0  1  2  3  4  5  6  7  8  9  10  11  12  13  14  15  16  17  18  19  20  21  22  23  24  25  26  27  28  29 
+leve read:
+13 4 23 1 7 19 26 0 3 6 11 15 21 24 28 2 5 9 12 14 17 20 22 25 27 29 8 10 16 18 
 
- root@ubuntu01:mysort# go test -v -run="Perfomance"
- init func print...
- === RUN   TestQsortPerfomance1
- --- PASS: TestQsortPerfomance1 (0.02s)
-	qsort_test.go:32: 0~100000 numbers qsor..
- === RUN   TestQsortPerfomance2
- --- PASS: TestQsortPerfomance2 (1.78s)
-	qsort_test.go:37: 0~1000000 numbers qsor..
- PASS
- ok  	_/home/agan/data-struct/struct-algorit/mysort	3.171s
+draw:
+                                13 
+                4                                 23 
+    1                 7                 19         26 
+  0     3     6         11         15     21     24     28 
+  2   5     9   12   14     17   20   22   25   27   29 
+  8   10   16   18 
 
-
-We will try Benchmark test when we encounter a suitable example..
-
+min: 0, max:29
+PASS
+ok  	_/home/agan/data-struct/struct-algorit/tree	0.009s
+root@ubuntu01:tree# 
 
