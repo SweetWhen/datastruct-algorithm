@@ -8,7 +8,9 @@ branch test-qsort: use testing package test our qsort
 
 ======>>>>>>>>
 branch go-tree: api for avl tree:
+
 root@ubuntu01:tree# go test
+
 create a slice: [1 16 27 25 9 12 24 21 0 8 17 15 19 29 23 5 4 22 18 26 7 10 20 28 6 2 13 3 11 14]
 
 tree created
