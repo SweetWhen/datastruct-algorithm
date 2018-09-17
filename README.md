@@ -1,39 +1,53 @@
-
 1) an avl tree api--------------------------------------------------------------------------:
+
 //==>> operator tree api:
+
 //insert an x to AvlTree, invoker format: t = tree.Insert(t, x)
+
 func Insert(tree *AvlNode, x ElementType) *AvlNode 
 
 //del an x in AvlTree, invoker format: t = tree.Delete(t, x)
+
 func Delete(tree *AvlNode, x ElementType) *AvlNode 	
 
 //make a tree to be empty
+
 func MakeEmpty( tree *AvlNode) *AvlNode 
 
 //==>> print tree api:
+
 //draw a tree
+
 func DrawTree1(tree *AvlNode) 
 
 //leve print a tree
+
 func LevePrintTree(tree *AvlNode) 
 
 //middle print a tree
+
 func MidPrintTree(tree *AvlNode) 
 
 //prev print a tree
+
 func PrevPrintTree(tree *AvlNode)
 
 //return the height of the node
+
 func (node *AvlNode) NodeHeight() int 
 
 //==>> find   node  api:
+
 //find Element x position in the avl tree
+
 func (tree *AvlNode) Find(x ElementType) *AvlNode
 
 //find min elem in the tree
+
 func (tree *AvlNode) FinMin() *AvlNode 
 
 //find max elem in the tree
+
 func (tree *AvlNode) FinMax() *AvlNode 
 
 root@ubuntu01:tree# go test
