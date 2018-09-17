@@ -25,16 +25,27 @@ PASS
 
 2) muti-goroutines safe heap:
 root@ubuntu01:priorityqueue# go test
+
 Before update Apple data:
+
 Banana, UintPrice:2.4, Cnt:10
+
 Orange, UintPrice:2.4, Cnt:10
+
 Apple, UintPrice:2.4, Cnt:10
+
 Updated Apple data and PopItem:
+
 Apple, UintPrice:69, Cnt:3
+
 After PopItem:
+
 Banana, UintPrice:2.4, Cnt:10
+
 Orange, UintPrice:2.4, Cnt:10
+
 PASS
-ok  	_/home/agan/data-struct/struct-algorit/myheap/priorityqueue	0.010s
+
+
 
 
