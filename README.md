@@ -88,17 +88,28 @@ get all item api:
 
 //testing:
 root@ubuntu01:priorityqueue# go test
+
 Before update Apple data:
-Banana, UintPrice:2.4, Cnt:10
-Orange, UintPrice:2.4, Cnt:10
-Apple, UintPrice:2.4, Cnt:10
+
+Banana, UintPrice:2.4, Cnt:10, Priority:4
+
+Orange, UintPrice:5, Cnt:60, Priority:6
+
+Apple, UintPrice:300, Cnt:4, Priority:7
+
 Updated Apple data and PopItem:
-Apple, UintPrice:69, Cnt:3
+
+Apple, UintPrice:69, Cnt:3, Priority:2
+
 After PopItem:
-Banana, UintPrice:2.4, Cnt:10
-Orange, UintPrice:2.4, Cnt:10
+
+Banana, UintPrice:2.4, Cnt:10, Priority:4
+
+Orange, UintPrice:5, Cnt:60, Priority:6
+
 PASS
-ok  	_/home/agan/data-struct/struct-algorit/myheap/priorityqueue	0.010s
+
+
 
 
 
